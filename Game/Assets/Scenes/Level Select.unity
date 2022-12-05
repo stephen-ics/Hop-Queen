@@ -388,8 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa74a407b72d7414c9b0d5e482429427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  levelText: {fileID: 0}
+  level: 3
 --- !u!1 &626616554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,8 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa74a407b72d7414c9b0d5e482429427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  levelText: {fileID: 0}
+  level: 1
 --- !u!1 &1585353429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,7 +1621,7 @@ GameObject:
   - component: {fileID: 1920650915}
   - component: {fileID: 1920650914}
   - component: {fileID: 1920650913}
-  - component: {fileID: 1920650916}
+  - component: {fileID: 1920650917}
   m_Layer: 5
   m_Name: Button 2
   m_TagString: Untagged
@@ -1696,7 +1694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1920650916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: OpenScene
         m_Mode: 1
@@ -1746,7 +1744,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920650911}
   m_CullTransparentMesh: 1
---- !u!114 &1920650916
+--- !u!114 &1920650917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1758,5 +1756,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa74a407b72d7414c9b0d5e482429427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  levelText: {fileID: 0}
+  level: 2

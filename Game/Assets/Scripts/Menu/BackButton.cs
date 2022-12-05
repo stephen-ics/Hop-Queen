@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Object that returns user to Main Menu 
+/// </summary>
 public class BackButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    /// <summary>
+    /// Transitions user to the desired index of scene 0 (Menu)
+    /// </summary>
     public void OpenScene()
     {
         SceneManager.LoadScene(0);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
