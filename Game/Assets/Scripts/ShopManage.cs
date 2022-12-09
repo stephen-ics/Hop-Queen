@@ -36,8 +36,8 @@ public class ShopManage : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Buy()
-    {
+    public void Buy()
+    { 
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
         if (coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID])
