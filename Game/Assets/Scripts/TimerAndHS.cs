@@ -47,7 +47,7 @@ public class TimerAndHS : MonoBehaviour
     public void ClearHighscores()
     {
         PlayerPrefs.DeleteKey("Highscore");
-        highscore.text = "No High Scores Yet";
+        highscore.text = "N/A";
     }
 
     void IncrimentTime()
