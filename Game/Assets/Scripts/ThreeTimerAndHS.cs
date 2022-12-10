@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TimerAndHS : MonoBehaviour
+public class ThreeTimerAndHS : MonoBehaviour
 {
     private int time = 0;
     public TMP_Text timer;
-    public TMP_Text highscore;
+    public TMP_Text highscorethree;
     void Start()
     {
-        if (PlayerPrefs.HasKey("Highscore") == true)
+        if (PlayerPrefs.HasKey("HighscoreThree") == true)
         {
-            highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+            highscorethree.text = PlayerPrefs.GetInt("HighscoreThree").ToString();
         }
         else
         {
-            highscore.text = "N/A";
+            highscorethree.text = "N/A";
         }
     }
 
@@ -30,11 +30,11 @@ public class TimerAndHS : MonoBehaviour
     public void StopTimer()
     {
         CancelInvoke();
-        if (time < PlayerPrefs.GetInt("Highscore")) 
+        if (time < PlayerPrefs.GetInt("HighscoreThree"))
         {
             SetHighscore();
         }
-        else if (highscore.text == "N/A")
+        else if (highscorethree.text == "N/A")
         {
             SetHighscore();
         }
@@ -43,15 +43,15 @@ public class TimerAndHS : MonoBehaviour
 
     public void SetHighscore()
     {
-        PlayerPrefs.SetInt("Highscore", time);
-        highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+        PlayerPrefs.SetInt("HighscoreThree", time);
+        highscorethree.text = PlayerPrefs.GetInt("HighscoreThree").ToString();
 
     }
 
     public void ClearHighscores()
     {
-        PlayerPrefs.DeleteKey("Highscore");
-        highscore.text = "N/A";
+        PlayerPrefs.DeleteKey("HighscoreThree");
+        highscorethree.text = "N/A";
     }
 
     void IncrimentTime()

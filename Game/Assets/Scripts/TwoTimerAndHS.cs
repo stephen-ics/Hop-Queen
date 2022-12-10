@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TimerAndHS : MonoBehaviour
+public class TwoTimerAndHS : MonoBehaviour
 {
     private int time = 0;
     public TMP_Text timer;
-    public TMP_Text highscore;
+    public TMP_Text highscoretwo;
     void Start()
     {
-        if (PlayerPrefs.HasKey("Highscore") == true)
+        if (PlayerPrefs.HasKey("HighscoreTwo") == true)
         {
-            highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+            highscoretwo.text = PlayerPrefs.GetInt("HighscoreTwo").ToString();
         }
         else
         {
-            highscore.text = "N/A";
+            highscoretwo.text = "N/A";
         }
     }
 
@@ -30,11 +30,11 @@ public class TimerAndHS : MonoBehaviour
     public void StopTimer()
     {
         CancelInvoke();
-        if (time < PlayerPrefs.GetInt("Highscore")) 
+        if (time < PlayerPrefs.GetInt("HighscoreTwo\""))
         {
             SetHighscore();
         }
-        else if (highscore.text == "N/A")
+        else if (highscoretwo.text == "N/A")
         {
             SetHighscore();
         }
@@ -43,15 +43,15 @@ public class TimerAndHS : MonoBehaviour
 
     public void SetHighscore()
     {
-        PlayerPrefs.SetInt("Highscore", time);
-        highscore.text = PlayerPrefs.GetInt("Highscore").ToString();
+        PlayerPrefs.SetInt("HighscoreTwo", time);
+        highscoretwo.text = PlayerPrefs.GetInt("HighscoreTwo").ToString();
 
     }
 
     public void ClearHighscores()
     {
-        PlayerPrefs.DeleteKey("Highscore");
-        highscore.text = "N/A";
+        PlayerPrefs.DeleteKey("HighscoreTwo");
+        highscoretwo.text = "N/A";
     }
 
     void IncrimentTime()
