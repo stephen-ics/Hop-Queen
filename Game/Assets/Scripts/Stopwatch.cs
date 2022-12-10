@@ -10,7 +10,7 @@ public class Stopwatch : MonoBehaviour
     bool stopwatchActive = false;
     float currentTime;
     public TMP_Text currentTimeText;
-    private float finishedTime;
+    public static float finishedTime;
     
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class Stopwatch : MonoBehaviour
             currentTime = currentTime + Time.deltaTime;
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimeText.text = time.ToString(@"mm\:ss\:fff");
+        currentTimeText.text = time.ToString(@"mm\:ss");
         finishedTime = currentTime;
     }
     public void StartStopwatch()
