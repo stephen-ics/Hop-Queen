@@ -4,14 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Object that sends the user to the level selection scene to start the game
+/// Object that sends the user to the scene selected by the index number
 /// </summary>
 public class StartGameButton : MonoBehaviour
 {
-    // Build number of scene to start when start button is pressed
-    public int gameStartScene;
+    /// <summary>
+    /// Integer holding the scene index
+    /// </summary>
+    public int nextScene;
 
+    /// <summary>
+    /// Loads the desired scene
+    /// </summary>
     public void StartGame() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(nextScene);
     }
 }
