@@ -4,11 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Object that starts and stops timer as well as sets and deletes a new high score for level three
+/// </summary>
 public class ThreeTimerAndHS : MonoBehaviour
 {
+    /// <summary>
+    /// Time variable with placeholder value of 0
+    /// </summary>
     private int time = 0;
+    /// <summary>
+    /// Timer text
+    /// </summary>
     public TMP_Text timer;
+    /// <summary>
+    /// High score text
+    /// </summary>
     public TMP_Text highscorethree;
+
     void Start()
     {
         if (PlayerPrefs.HasKey("HighscoreThree") == true)
@@ -20,41 +33,51 @@ public class ThreeTimerAndHS : MonoBehaviour
             highscorethree.text = "N/A";
         }
     }
-
-    public void StartTimer()
+    /// <summary>
+    /// When set active (by button), increase time
+    /// </summary>
+    public void StartTimerThree()
     {
         time = 0;
-        InvokeRepeating("IncrimentTime", 1, 1);
+        InvokeRepeating("IncrimentTimeThree", 1, 1);
     }
-
-    public void StopTimer()
+    /// <summary>
+    /// When set active (by button), stop incrementing time and replace high score if less than current high score
+    /// </summary>
+    public void StopTimerThree()
     {
         CancelInvoke();
         if (time < PlayerPrefs.GetInt("HighscoreThree"))
         {
-            SetHighscore();
+            SetHighscoreThree();
         }
         else if (highscorethree.text == "N/A")
         {
-            SetHighscore();
+            SetHighscoreThree();
         }
 
     }
-
-    public void SetHighscore()
+    /// <summary>
+    /// Sets new highscore
+    /// </summary>
+    public void SetHighscoreThree()
     {
         PlayerPrefs.SetInt("HighscoreThree", time);
         highscorethree.text = PlayerPrefs.GetInt("HighscoreThree").ToString();
 
     }
-
-    public void ClearHighscores()
+    /// <summary>
+    /// Clears current high score
+    /// </summary>
+    public void ClearHighscoresThree()
     {
         PlayerPrefs.DeleteKey("HighscoreThree");
         highscorethree.text = "N/A";
     }
-
-    void IncrimentTime()
+    /// <summary>
+    /// Increments the time by 1 every second
+    /// </summary>
+    void IncrimentTimeThree()
     {
         time += 1;
         timer.text = "Time: " + time;
