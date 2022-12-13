@@ -67,7 +67,7 @@ public class ShopManage : MonoBehaviour
             else
             {
                 ButtonRef.GetComponent<ButtonInfo>().equipped = true;
-                ButtonRef.GetComponent<CosmeticsHandler>().currentSprite = ButtonRef.GetComponent<ButtonInfo>().ItemID;
+                //ButtonRef.GetComponent<CosmeticsHandler>().currentSprite = ButtonRef.GetComponent<ButtonInfo>().ItemID;
             }
         }
     }
