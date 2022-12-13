@@ -9,6 +9,7 @@ public class ShopManage : MonoBehaviour
     public int[,] shopItems = new int[5, 5];
     public float coins;
     public Text CoinsTXT;
+    private bool isEquipped;
 
     // Start is called before the first frame update
     void Start()
@@ -40,21 +41,34 @@ public class ShopManage : MonoBehaviour
     { 
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         GameObject[] cosmeticsList = GameObject.FindGameObjectsWithTag("Item");
-        print("asdasd");
+ 
         if ((coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID]) && (!ButtonRef.GetComponent<ButtonInfo>().owned))
         {
-            print("hiii");
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
             CoinsTXT.text = "Coins: " + coins.ToString();
             ButtonRef.GetComponent<ButtonInfo>().owned = true;
         }
+
         else if (ButtonRef.GetComponent<ButtonInfo>().owned)
         {
+            print("hello");
+            isEquipped = ButtonRef.GetComponent<ButtonInfo>().equipped;
+
             foreach (GameObject cosmetic in cosmeticsList)
             {
                 cosmetic.GetComponent<ButtonInfo>().equipped = false;
+                print("sdasd");
             }
-            ButtonRef.GetComponent<ButtonInfo>().equipped = !ButtonRef.GetComponent<ButtonInfo>().equipped;
+            print("hello2");
+            if (isEquipped)
+            {
+                ButtonRef.GetComponent<ButtonInfo>().equipped = false;
+            }
+            else
+            {
+                ButtonRef.GetComponent<ButtonInfo>().equipped = true;
+                ButtonRef.GetComponent<CosmeticsHandler>().currentSprite = ButtonRef.GetComponent<ButtonInfo>().ItemID;
+            }
         }
     }
 }
