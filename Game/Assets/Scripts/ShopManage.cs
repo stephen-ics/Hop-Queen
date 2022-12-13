@@ -39,13 +39,22 @@ public class ShopManage : MonoBehaviour
     public void Buy()
     { 
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-
-        if (coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        GameObject[] cosmeticsList = GameObject.FindGameObjectsWithTag("Item");
+        print("asdasd");
+        if ((coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID]) && (!ButtonRef.GetComponent<ButtonInfo>().owned))
         {
+            print("hiii");
             coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
             CoinsTXT.text = "Coins: " + coins.ToString();
-            ButtonRef.GetComponent<ButtonInfo>().QuantityTxt.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
+            ButtonRef.GetComponent<ButtonInfo>().owned = true;
+        }
+        else if (ButtonRef.GetComponent<ButtonInfo>().owned)
+        {
+            foreach (GameObject cosmetic in cosmeticsList)
+            {
+                cosmetic.GetComponent<ButtonInfo>().equipped = false;
+            }
+            ButtonRef.GetComponent<ButtonInfo>().equipped = !ButtonRef.GetComponent<ButtonInfo>().equipped;
         }
     }
 }
