@@ -5457,14 +5457,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909826492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feec470e0be5449f382d05cda9aba446, type: 3}
+  m_Script: {fileID: 11500000, guid: 39f3cd6cab23b4dc78c472009310cc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteList:
   - {fileID: 7482667652216324306, guid: 815ddf3f6c107466d8963506274ee9ad, type: 3}
   - {fileID: 7482667652216324306, guid: d201d246c08c3422eb38cc1f405d89f5, type: 3}
   - {fileID: 7482667652216324306, guid: f6d4122b462264c35bb13a045a6d681a, type: 3}
-  spriteId: 0
+  - {fileID: 7482667652216324306, guid: b76cfe50dcb304e95b9955064f49ba0c, type: 3}
+  spriteID: 0
+  Player: {fileID: 1909826492}
 --- !u!1 &1910463239
 GameObject:
   m_ObjectHideFlags: 0

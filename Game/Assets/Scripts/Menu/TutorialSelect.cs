@@ -18,22 +18,3 @@ public class TutorialSelect : MonoBehaviour
     }
 
 }
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
-
-public class ComesticsHandler : MonoBehaviour
-{
-    public Sprite[] spriteList;
-    public int currentSprite;
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<SpriteRenderer>().sprite = spriteList[currentSprite];
-    }
-}

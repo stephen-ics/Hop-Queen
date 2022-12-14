@@ -7,13 +7,18 @@ using UnityEngine.UI;
 public class ShopManage : MonoBehaviour
 {
     public int[,] shopItems = new int[5, 5];
-    public float coins;
+    public static float coins;
     public Text CoinsTXT;
     private bool isEquipped;
+
+    private CosmeticID id;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        coins = 100;
+
         CoinsTXT.text = "Coins: " + coins.ToString();
 
         //ID's
@@ -51,15 +56,15 @@ public class ShopManage : MonoBehaviour
 
         else if (ButtonRef.GetComponent<ButtonInfo>().owned)
         {
-            print("hello");
             isEquipped = ButtonRef.GetComponent<ButtonInfo>().equipped;
+            print(isEquipped);
+            print("asdsad");
 
             foreach (GameObject cosmetic in cosmeticsList)
             {
                 cosmetic.GetComponent<ButtonInfo>().equipped = false;
-                print("sdasd");
             }
-            print("hello2");
+ 
             if (isEquipped)
             {
                 ButtonRef.GetComponent<ButtonInfo>().equipped = false;
@@ -67,7 +72,9 @@ public class ShopManage : MonoBehaviour
             else
             {
                 ButtonRef.GetComponent<ButtonInfo>().equipped = true;
-                ButtonRef.GetComponent<CosmeticsHandler>().currentSprite = ButtonRef.GetComponent<ButtonInfo>().ItemID;
+                print("adsad");
+                print(id.currentID.ToString());
+                id.currentID = ButtonRef.GetComponent<ButtonInfo>().ItemID;
             }
         }
     }
