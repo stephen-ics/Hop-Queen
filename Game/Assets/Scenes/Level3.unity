@@ -15981,7 +15981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484088403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -106.2, y: 84, z: 0}
+  m_LocalPosition: {x: -106.8, y: 79.2, z: 0}
   m_LocalScale: {x: 3.0151808, y: 2.495585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18295,7 +18295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1735594500}
-  startingPosition: {fileID: 11400000, guid: e344784900cf1412d808c9354a32c6c6, type: 2}
   rb: {fileID: 1735594502}
   groundCheck: {fileID: 2059977076}
   groundLayer:
