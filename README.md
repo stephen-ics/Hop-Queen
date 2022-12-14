@@ -1,22 +1,22 @@
-# Hop-Queen 
+# Hop-Queen Tutorial
 
-## Tutorial
-
-### Download
-Step 1. Download UnityHub and Unity </br>
+## Download
+Step 1. Download UnityHub, Unity, and Github Desktop for source control </br>
 Step 2. Register for a Unity License </br>
 Step 3. Clone this [Github Repository](https://github.com/stephen-ics/Hop-Queen) using the terminal </br>
 Step 4. Open project in UnityHub, and run Unity
-Step 5. Run the project
+Step 5. Run the project to try it out!
+Step 6. Create a new Github repository 
+Step 6. Connect the cloned project to the Github Repository and commit to make changes
 
-### Description
+## Description
 A 2D platform game made for the course ICS4U0, where the end goal is to reach the top of the last level, where the difficulty scales with each level. Arrows will be pointing at the correct direction towards the top.
 
-### Controls
+## Controls
 Press A and D to go left and right
 Press space bar to jump
 
-### Obstacles
+## Obstacles
 Many tight jumps and head hitters
 Wind
 Slime
@@ -25,7 +25,7 @@ Mud
 Darkness 
 Gravity Change
 
-### Menu
+## Menu
 The main menu contains: Start, Options, Quit, Scores, and Shop </br>
 Start: Directs to the level selection menu where a level can be selected </br>
 Options: Directs to options tab where volume, quality, and fullscreen can be chosen </br>
@@ -33,7 +33,7 @@ Scores: Directs to scores tab, where fastest personal records are recorded </br>
 Shop: Directs to shop, where cosmetics can be exchanged with coins gained by completing levels
 Quit: Quits the game
 
-### Shop
+## Shop
 Buy different cosmetics to equip on your character: Currently there is the green default queen, a blue queen, a purple queen and a red queen.
 Click on the character once to buy, then click on the character to equip and unequip
 
