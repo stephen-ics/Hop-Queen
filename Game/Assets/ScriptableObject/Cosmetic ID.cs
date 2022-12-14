@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CosmeticID : ScriptableObject
+public class CosmeticID : MonoBehaviour
 {
-    public int currentID;
+    public static int currentID;
 }

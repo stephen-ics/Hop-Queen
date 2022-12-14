@@ -7,19 +7,17 @@ using UnityEngine.UI;
 public class ShopManage : MonoBehaviour
 {
     public int[,] shopItems = new int[5, 5];
-    public static float coins;
     public Text CoinsTXT;
     private bool isEquipped;
+    private bool owned;
+    public int id;
 
-    private CosmeticID id;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        coins = 100;
-
-        CoinsTXT.text = "Coins: " + coins.ToString();
+        CoinsTXT.text = "Coins: " + Inventory.coins.ToString();
 
         //ID's
         shopItems[1, 1] = 1;
@@ -46,35 +44,35 @@ public class ShopManage : MonoBehaviour
     { 
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         GameObject[] cosmeticsList = GameObject.FindGameObjectsWithTag("Item");
- 
-        if ((coins >= shopItems[2,ButtonRef.GetComponent<ButtonInfo>().ItemID]) && (!ButtonRef.GetComponent<ButtonInfo>().owned))
+
+        id = (ButtonRef.GetComponent<ButtonInfo>().ItemID) - 1;
+        owned = Inventory.ownedCosmetics[id];
+        
+
+        if ((Inventory.coins >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]) && (!owned))
         {
-            coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
-            CoinsTXT.text = "Coins: " + coins.ToString();
-            ButtonRef.GetComponent<ButtonInfo>().owned = true;
+            Inventory.coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
+            CoinsTXT.text = "Coins: " + Inventory.coins.ToString();
+            Inventory.ownedCosmetics[id] = true;
         }
 
-        else if (ButtonRef.GetComponent<ButtonInfo>().owned)
+        else if (owned)
         {
-            isEquipped = ButtonRef.GetComponent<ButtonInfo>().equipped;
-            print(isEquipped);
-            print("asdsad");
+            isEquipped = Inventory.equippedCosmetics[id];
 
-            foreach (GameObject cosmetic in cosmeticsList)
+            for (int i = 0; i < Inventory.equippedCosmetics.Length; i++)
             {
-                cosmetic.GetComponent<ButtonInfo>().equipped = false;
+                Inventory.equippedCosmetics[i] = false;
             }
- 
+
             if (isEquipped)
             {
-                ButtonRef.GetComponent<ButtonInfo>().equipped = false;
+                Inventory.equippedCosmetics[id] = false;
             }
             else
             {
-                ButtonRef.GetComponent<ButtonInfo>().equipped = true;
-                print("adsad");
-                print(id.currentID.ToString());
-                id.currentID = ButtonRef.GetComponent<ButtonInfo>().ItemID;
+                Inventory.equippedCosmetics[id] = true;
+                CosmeticID.currentID = id;
             }
         }
     }

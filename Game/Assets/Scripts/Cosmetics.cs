@@ -9,12 +9,11 @@ public class Cosmetics : MonoBehaviour
     public int spriteID;
     public static int currentSprite;
     public GameObject Player;
-    private CosmeticID id;
+    public Sprite testSprite;
 
     // Update is called once per frame
     void Update()
     {
-        print(id.currentID);
-        Player.GetComponent<SpriteRenderer>().sprite = spriteList[id.currentID];
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteList[(CosmeticID.currentID)];
     }
 }
