@@ -4,17 +4,37 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the shop which allows the player to buy, equip, and unequip cosmetics from the shop
+/// </summary>
 public class ShopManage : MonoBehaviour
 {
+    /// <summary>
+    /// Gets the info on the different shop items
+    /// </summary>
     public int[,] shopItems = new int[5, 5];
+    /// <summary>
+    /// Gets the coins text
+    /// </summary>
     public Text CoinsTXT;
+    /// <summary>
+    /// Gets whether or not the selected item is currently equipped
+    /// </summary>
     private bool isEquipped;
+    /// <summary>
+    /// Gets whether or not the selected item is currently owned
+    /// </summary>
     private bool owned;
+    /// <summary>
+    /// Gets the id of the items
+    /// </summary>
     public int id;
 
 
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Sets the info for all the shop items and display the coins text
+    /// </summary>
     void Start()
     {
         CoinsTXT.text = "Coins: " + Inventory.coins.ToString();
@@ -39,8 +59,10 @@ public class ShopManage : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    public void Buy()
+    /// <summary>
+    /// When clicked, buy the item if the item is not owned and the player has enough money, or else equip or unequip the item
+    /// </summary>
+    public void HandleClick()
     { 
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         GameObject[] cosmeticsList = GameObject.FindGameObjectsWithTag("Item");

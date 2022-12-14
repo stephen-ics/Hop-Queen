@@ -2,24 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the basic movement of the player
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+    /// <summary>
+    /// The value of the horizontal axis, which direction the player is going
+    /// </summary>
     private float horizontal;
+    /// <summary>
+    /// The speed of the player
+    /// </summary>
     private float speed = 8f;
+    /// <summary>
+    /// The jumping power of the player
+    /// </summary>
     private float jumpingPower = 20f;
+    /// <summary>
+    /// Whether or not the player is facing right
+    /// </summary>
     private bool isFacingRight = true;
+    /// <summary>
+    /// The animator that determines changes in animations
+    /// </summary>
     public Animator animator;
-    public VectorValue startingPosition;
-     
+    /// <summary>
+    /// The ridgid body of the player
+    /// </summary>
     [SerializeField] private Rigidbody2D rb;
+    /// <summary>
+    /// Object below the player to check for collisions with ground layer
+    /// </summary>
     [SerializeField] private Transform groundCheck;
+    /// <summary>
+    /// Layer of the ground
+    /// </summary>
     [SerializeField] private LayerMask groundLayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        transform.position = startingPosition.initialValue;
-    }
+    /// <summary>
+    /// Constantly updates the movement of the player, jump availibility, and check for flips
+    /// </summary>
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -40,17 +63,25 @@ public class PlayerMovement : MonoBehaviour
         Flip();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Applies movement
+    /// </summary>
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
+    /// <summary>
+    /// Check if the player is grounded
+    /// </summary>
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 1f, groundLayer);
     }
 
+    /// <summary>
+    /// Flip the sprite of the player to face the correct direction
+    /// </summary>
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
