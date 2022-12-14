@@ -7,7 +7,7 @@ Step 3. Clone this [Github Repository](https://github.com/stephen-ics/Hop-Queen)
 Step 4. Open project in UnityHub, and run Unity</br>
 Step 5. Run the project to try it out!</br>
 Step 6. Create a new Github repository</br>
-Step 6. Connect the cloned project to the Github Repository and commit to make changes
+Step 7. Connect the cloned project to the Github Repository and commit to make changes
 
 ## Description
 A 2D platform game made for the course ICS4U0, where the end goal is to reach the top of the last level, where the difficulty scales with each level. Arrows will be pointing at the correct direction towards the top.
