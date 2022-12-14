@@ -1503,8 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af180e15e89dc43dcb6db286c3bd3f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
-  levelName: Level3
+  sceneName: Level3
 --- !u!61 &395086020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2253,7 +2252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 642357539}
-  startingPosition: {fileID: 11400000, guid: e344784900cf1412d808c9354a32c6c6, type: 2}
   rb: {fileID: 642357541}
   groundCheck: {fileID: 984196464}
   groundLayer:

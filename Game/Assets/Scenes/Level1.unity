@@ -2897,7 +2897,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 294576117
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5390,7 +5390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1701291106}
-  startingPosition: {fileID: 11400000, guid: e344784900cf1412d808c9354a32c6c6, type: 2}
   rb: {fileID: 1701291108}
   groundCheck: {fileID: 1959671806}
   groundLayer:
@@ -5544,9 +5543,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6411856a0cd72ff4a8223eb6bdc5fd6a, type: 3}
   - {fileID: 21300000, guid: 3c68040202967d145a75e0ec3118205f, type: 3}
   - {fileID: 21300000, guid: 01de98e1f22e50c4eaf3c2a2dd61da91, type: 3}
-  spriteID: 0
-  Player: {fileID: 0}
-  testSprite: {fileID: 0}
 --- !u!1 &1710823355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5773,7 +5769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af180e15e89dc43dcb6db286c3bd3f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level2
+  sceneName: Level2
 --- !u!61 &1782305368
 BoxCollider2D:
   m_ObjectHideFlags: 0
