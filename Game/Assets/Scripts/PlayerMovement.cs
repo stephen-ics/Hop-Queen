@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        animator.SetInteger("CurrentID", Inventory.currentID);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

@@ -72,7 +72,7 @@ public class ShopManage : MonoBehaviour
             else
             {
                 Inventory.equippedCosmetics[id] = true;
-                CosmeticID.currentID = id;
+                Inventory.currentID = id;
             }
         }
     }

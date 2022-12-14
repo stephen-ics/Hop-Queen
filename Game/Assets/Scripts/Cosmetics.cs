@@ -14,6 +14,7 @@ public class Cosmetics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteList[(CosmeticID.currentID)];
+        
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteList[(Inventory.currentID)];
     }
 }
