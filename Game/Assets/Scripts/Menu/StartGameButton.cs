@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class StartGameButton : MonoBehaviour
 {
     /// <summary>
-    /// Integer holding the scene index
+    /// Integer holding the scene index as an integer
     /// </summary>
     public int nextScene;
 

@@ -16,7 +16,7 @@ public class TextSlider : MonoBehaviour
     /// <summary>
     /// Sets the text to the value of the slider
     /// </summary>
-    /// <param name="value"> volume slider value </param>
+    /// <param name="value"> volume slider value as a float </param>
    public void SetNumberText(float value)
     {
         numberText.text = value.ToString();

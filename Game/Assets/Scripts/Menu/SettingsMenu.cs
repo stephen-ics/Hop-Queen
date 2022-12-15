@@ -12,7 +12,7 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// Allows user to toggle in and out of fullscreen
     /// </summary>
-    /// <param name="isFullscreen"> Judges whether toggle is on or off </param>
+    /// <param name="isFullscreen"> Judges whether toggle is on or off as a bool </param>
     public void SetFullScreen(bool isFullscreen)
     {
         //If toggle is fullscreen, true, otherwise, false
@@ -21,7 +21,7 @@ public class SettingsMenu : MonoBehaviour
     /// <summary>
     /// Allows user to select their desired quality of game
     /// </summary>
-    /// <param name="qualityIndex"> quality index choice </param>
+    /// <param name="qualityIndex"> quality index choice as an integer </param>
     public void setQuality(int qualityIndex)
     {
         //quality index selected in dropdown set as quality 

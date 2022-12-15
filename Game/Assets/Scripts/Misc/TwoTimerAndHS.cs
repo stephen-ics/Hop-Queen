@@ -10,7 +10,7 @@ using TMPro;
 public class TwoTimerAndHS : MonoBehaviour
 {
     /// <summary>
-    /// Time variable with placeholder value of 0
+    /// Time variable with placeholder value of 0 as an integer
     /// </summary>
     private int time = 0;
     /// <summary>

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelector : MonoBehaviour
 {
     /// <summary>
-    /// Level selected by the user
+    /// Level selected by the user as an Integer
     /// </summary>
     public int level;
 

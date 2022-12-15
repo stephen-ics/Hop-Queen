@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
     /// <summary>
-    /// Bool to determine if game is paused/esc key pressed
+    /// Bool to determine if game is paused/esc key pressed as a bool
     /// </summary>
     public static bool GameIsPaused = false;
     /// <summary>
