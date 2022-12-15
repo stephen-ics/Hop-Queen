@@ -9,7 +9,7 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class Cosmetics : MonoBehaviour
 {
     /// <summary>
-    /// Stores the list of possible sprites to be displayed 
+    /// Stores the list of possible sprites to be displayed as an array of sprites
     /// </summary>
     public Sprite[] spriteList;
 
@@ -17,7 +17,8 @@ public class Cosmetics : MonoBehaviour
     /// Sets the sprite of the player according to the current cosmetic of the player
     /// </summary>
     void Update()
-    { 
+    {
+        // Sets the sprite renderer component in the selected game object to the currentID in the sprite list
         this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteList[(Inventory.currentID)];
     }
 }

@@ -9,23 +9,23 @@ using UnityEngine.UI;
 public class ButtonInfo : MonoBehaviour
 {
     /// <summary>
-    /// Gets the ID of the item
+    /// The ID of the item as an int
     /// </summary>
     public int ItemID;
     /// <summary>
-    /// Gets the price text
+    /// The price text as a Text
     /// </summary>
     public Text PriceTxt;
     /// <summary>
-    /// Gets the status text
+    /// The status text as a Text
     /// </summary>
     public Text StatusTxt;
     /// <summary>
-    /// Gets the ShopManager GameObject
+    /// The ShopManager as a GameObject
     /// </summary>
     public GameObject ShopManager;
     /// <summary>
-    /// Gets the checkMark GameObject
+    /// The checkMark as a GameObject
     /// </summary>
     public GameObject checkMark;
 
@@ -34,8 +34,10 @@ public class ButtonInfo : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // Updates the price text for each item
         PriceTxt.text = "Price: $" + ShopManager.GetComponent<ShopManage>().shopItems[2, ItemID].ToString();
 
+        // Check and display if items are owned or not owned
         if (Inventory.ownedCosmetics[ItemID-1])
         {
             StatusTxt.text = "Owned: Yes";
@@ -45,7 +47,7 @@ public class ButtonInfo : MonoBehaviour
             StatusTxt.text = "Owned: No";
         }
 
-
+        // Checks if the player is currently equipping the item to determine whether or not to display the green square
         if (Inventory.equippedCosmetics[ItemID-1])
         {
             checkMark.SetActive(true);

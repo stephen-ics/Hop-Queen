@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Sets the players inventory, containing the number of coins, owned cosmetics, equipped cosmetics, and the currentID of the sprite equipped
+/// Sets the players inventory containing the number of coins, owned cosmetics, equipped cosmetics, and the currentID of the sprite equipped
 /// </summary>
 public class Inventory : MonoBehaviour
 {
     /// <summary>
-    /// Gets the number of coins 
+    /// The number of coins as an int
     /// </summary>
     public static int coins = 100;
     /// <summary>
-    /// Gets the status of the cosmetics on whether they are owned
+    /// The status of the cosmetics on whether they are owned as an array of booleans
     /// </summary>
     public static bool[] ownedCosmetics = new[] { false, false, false, false };
     /// <summary>
-    /// Gets the status of the owned cosmetics on whether they are equiped
+    /// The status of the owned cosmetics on whether they are equipped as an array of booleans
     /// </summary>
     public static bool[] equippedCosmetics = new[] { false, false, false, false };
     /// <summary>
-    /// Gets the currentID of the equipped cosmetic
+    /// The currentID of the equipped cosmetic as an integer
     /// </summary>
     public static int currentID;
 

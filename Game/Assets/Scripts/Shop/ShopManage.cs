@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class ShopManage : MonoBehaviour
 {
     /// <summary>
-    /// Gets the info on the different shop items
+    /// Stores the info on the different shop items as a 2D int array
     /// </summary>
     public int[,] shopItems = new int[5, 5];
     /// <summary>
@@ -18,19 +18,25 @@ public class ShopManage : MonoBehaviour
     /// </summary>
     public Text CoinsTXT;
     /// <summary>
-    /// Gets whether or not the selected item is currently equipped
+    /// Whether or not the selected item is currently equipped as a boolean
     /// </summary>
     private bool isEquipped;
     /// <summary>
-    /// Gets whether or not the selected item is currently owned
+    /// Whether or not the selected item is currently owned as a boolean
     /// </summary>
     private bool owned;
     /// <summary>
-    /// Gets the id of the items
+    /// The id of the items as an int
     /// </summary>
     public int id;
-
-
+    /// <summary>
+    /// The current button the player is clicking on as a GameObject
+    /// </summary>
+    GameObject ButtonRef;
+    /// <summary>
+    /// The list of cosmetics that are considered items as an array of GameObjects
+    /// </summary>
+    GameObject[] cosmeticsList;
 
     /// <summary>
     /// Sets the info for all the shop items and display the coins text
@@ -60,19 +66,21 @@ public class ShopManage : MonoBehaviour
     }
 
     /// <summary>
-    /// When clicked, buy the item if the item is not owned and the player has enough money, or else equip or unequip the item
+    /// When clicked, buy the item if the player has enough money, and the item is not owned, or else equip or unequip the item
     /// </summary>
     public void HandleClick()
-    { 
-        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
-        GameObject[] cosmeticsList = GameObject.FindGameObjectsWithTag("Item");
-
+    {
+        // Initializing variables for current selected item
+        ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+        cosmeticsList = GameObject.FindGameObjectsWithTag("Item");
         id = (ButtonRef.GetComponent<ButtonInfo>().ItemID) - 1;
         owned = Inventory.ownedCosmetics[id];
-        
 
+
+        // Check the status of the item
         if ((Inventory.coins >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID]) && (!owned))
         {
+            // If the player has enough coins and item is not owned, buy item
             Inventory.coins -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
             CoinsTXT.text = "Coins: " + Inventory.coins.ToString();
             Inventory.ownedCosmetics[id] = true;
@@ -80,19 +88,24 @@ public class ShopManage : MonoBehaviour
 
         else if (owned)
         {
+            // If item is owned check if it is equipped
             isEquipped = Inventory.equippedCosmetics[id];
 
+            // Unequip all items
             for (int i = 0; i < Inventory.equippedCosmetics.Length; i++)
             {
                 Inventory.equippedCosmetics[i] = false;
             }
 
+            // Check if item is equipped
             if (isEquipped)
             {
+                // If item is equipped, unequip the item
                 Inventory.equippedCosmetics[id] = false;
             }
             else
             {
+                // If item is unequipped, equip the item
                 Inventory.equippedCosmetics[id] = true;
                 Inventory.currentID = id;
             }
