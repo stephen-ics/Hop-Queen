@@ -21,7 +21,7 @@ public class SceneTransition : MonoBehaviour
         {
             // Load scene and add 50 coins to the Player
             SceneManager.LoadScene(sceneName);
-            Inventory.coins += 50;
+            Inventory.coins += 100;
         }
     }
 

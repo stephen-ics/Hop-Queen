@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     /// <summary>
     /// The number of coins as an int
     /// </summary>
-    public static int coins = 100;
+    public static int coins = 0;
     /// <summary>
     /// The status of the cosmetics on whether they are owned as an array of booleans
     /// </summary>
