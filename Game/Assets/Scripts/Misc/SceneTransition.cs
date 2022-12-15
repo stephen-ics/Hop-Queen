@@ -19,7 +19,7 @@ public class SceneTransition : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneName);
-            Inventory.coins += 50;
+            Inventory.coins += 100;
         }
     }
 

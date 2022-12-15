@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     /// <summary>
     /// Gets the number of coins 
     /// </summary>
-    public static int coins = 100;
+    public static int coins = 0;
     /// <summary>
     /// Gets the status of the cosmetics on whether they are owned
     /// </summary>
